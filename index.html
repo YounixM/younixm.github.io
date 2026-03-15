@@ -2,544 +2,1052 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="Resume" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Yunus A M — Software Engineer & Engineering Manager" />
     <meta name="author" content="Yunus A M" />
+    <title>Yunus A M</title>
 
-    <title>Yunus A M - Resume</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-    <!-- Custom fonts for this template -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
-      rel="stylesheet"
-    />
-    <link
-      href="vendor/font-awesome/css/font-awesome.min.css"
-      rel="stylesheet"
-    />
-    <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet" />
-    <link
-      href="vendor/simple-line-icons/css/simple-line-icons.css"
-      rel="stylesheet"
-    />
+    <style>
+      /* ─── Reset & Variables ─────────────────────────────────────────────── */
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <!-- Custom styles for this template -->
-    <link href="css/resume.min.css" rel="stylesheet" />
+      :root {
+        --bg:         #09090b;
+        --surface:    #111115;
+        --card:       #18181b;
+        --border:     rgba(255,255,255,.08);
+        --accent:     #6366f1;
+        --accent2:    #818cf8;
+        --glow:       rgba(99,102,241,.35);
+        --text:       #f4f4f5;
+        --muted:      #a1a1aa;
+        --subtle:     #52525b;
+        --gradient:   linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+        --radius:     12px;
+        --radius-lg:  20px;
+        --font:       'Inter', system-ui, sans-serif;
+        --font-head:  'Space Grotesk', system-ui, sans-serif;
+        --nav-h:      64px;
+        --transition: .25s cubic-bezier(.4,0,.2,1);
+      }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        font-family: var(--font);
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a { color: inherit; text-decoration: none; }
+      ul { list-style: none; }
+
+      /* ─── Scrollbar ─────────────────────────────────────────────────────── */
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: var(--bg); }
+      ::-webkit-scrollbar-thumb { background: var(--subtle); border-radius: 3px; }
+
+      /* ─── Noise texture overlay ─────────────────────────────────────────── */
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      /* ─── Nav ───────────────────────────────────────────────────────────── */
+      nav {
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        height: var(--nav-h);
+        z-index: 100;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        background: rgba(9,9,11,.7);
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 clamp(1.5rem, 5vw, 3rem);
+        transition: background var(--transition);
+      }
+
+      .nav-logo {
+        font-family: var(--font-head);
+        font-weight: 700;
+        font-size: 1.15rem;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        font-size: .875rem;
+        font-weight: 500;
+        color: var(--muted);
+        transition: color var(--transition);
+        position: relative;
+      }
+
+      .nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: -4px; left: 0; right: 0;
+        height: 1px;
+        background: var(--gradient);
+        transform: scaleX(0);
+        transition: transform var(--transition);
+        transform-origin: left;
+      }
+
+      .nav-links a:hover { color: var(--text); }
+      .nav-links a:hover::after { transform: scaleX(1); }
+
+      .nav-hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 4px;
+      }
+
+      .nav-hamburger span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: var(--muted);
+        border-radius: 2px;
+        transition: var(--transition);
+      }
+
+      /* ─── Hero ──────────────────────────────────────────────────────────── */
+      #hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: calc(var(--nav-h) + 4rem) clamp(1.5rem, 8vw, 6rem) 4rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        pointer-events: none;
+      }
+
+      .hero-orb-1 {
+        width: 600px; height: 600px;
+        background: rgba(99,102,241,.15);
+        top: -200px; right: -100px;
+      }
+
+      .hero-orb-2 {
+        width: 400px; height: 400px;
+        background: rgba(168,85,247,.1);
+        bottom: -100px; left: 10%;
+      }
+
+      .hero-content { position: relative; z-index: 1; max-width: 760px; }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+        padding: .35rem .9rem;
+        border-radius: 100px;
+        border: 1px solid var(--border);
+        background: rgba(255,255,255,.04);
+        font-size: .8rem;
+        color: var(--muted);
+        margin-bottom: 1.75rem;
+      }
+
+      .hero-badge .dot {
+        width: 6px; height: 6px;
+        border-radius: 50%;
+        background: #22c55e;
+        box-shadow: 0 0 8px rgba(34,197,94,.6);
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: .4; }
+      }
+
+      .hero-name {
+        font-family: var(--font-head);
+        font-size: clamp(3rem, 8vw, 6rem);
+        font-weight: 700;
+        line-height: 1.05;
+        letter-spacing: -.03em;
+        margin-bottom: 1rem;
+      }
+
+      .hero-name .gradient-text {
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero-title {
+        font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+        color: var(--muted);
+        font-weight: 400;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-bio {
+        font-size: 1rem;
+        color: var(--muted);
+        max-width: 560px;
+        line-height: 1.75;
+        margin-bottom: 2.5rem;
+      }
+
+      .hero-meta {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        flex-wrap: wrap;
+        margin-bottom: 2.5rem;
+        font-size: .875rem;
+        color: var(--muted);
+      }
+
+      .hero-meta i { color: var(--accent2); }
+
+      .hero-actions {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .btn-primary-grad {
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+        padding: .7rem 1.5rem;
+        border-radius: var(--radius);
+        background: var(--gradient);
+        color: #fff;
+        font-weight: 600;
+        font-size: .9rem;
+        transition: opacity var(--transition), transform var(--transition), box-shadow var(--transition);
+        box-shadow: 0 4px 20px var(--glow);
+      }
+
+      .btn-primary-grad:hover {
+        opacity: .9;
+        transform: translateY(-1px);
+        box-shadow: 0 8px 30px var(--glow);
+      }
+
+      .btn-ghost {
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+        padding: .7rem 1.5rem;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        color: var(--muted);
+        font-weight: 500;
+        font-size: .9rem;
+        background: transparent;
+        transition: border-color var(--transition), color var(--transition), background var(--transition);
+      }
+
+      .btn-ghost:hover {
+        border-color: var(--accent);
+        color: var(--text);
+        background: rgba(99,102,241,.08);
+      }
+
+      .social-icons {
+        display: flex;
+        gap: .75rem;
+        margin-left: .5rem;
+      }
+
+      .social-icon {
+        width: 40px; height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 1rem;
+        transition: border-color var(--transition), color var(--transition), background var(--transition), transform var(--transition);
+      }
+
+      .social-icon:hover {
+        border-color: var(--accent2);
+        color: var(--accent2);
+        background: rgba(99,102,241,.1);
+        transform: translateY(-2px);
+      }
+
+      /* ─── Sections ──────────────────────────────────────────────────────── */
+      .section {
+        padding: 6rem clamp(1.5rem, 8vw, 6rem);
+        position: relative;
+      }
+
+      .section-inner { max-width: 860px; margin: 0 auto; }
+
+      .section-label {
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+        font-size: .75rem;
+        font-weight: 600;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        color: var(--accent2);
+        margin-bottom: 1rem;
+      }
+
+      .section-label::before {
+        content: '';
+        width: 16px; height: 1px;
+        background: var(--accent2);
+      }
+
+      .section-title {
+        font-family: var(--font-head);
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 700;
+        letter-spacing: -.025em;
+        margin-bottom: 3.5rem;
+        color: var(--text);
+      }
+
+      /* Section dividers */
+      .section:not(:first-child)::before {
+        content: '';
+        position: absolute;
+        top: 0; left: clamp(1.5rem, 8vw, 6rem); right: clamp(1.5rem, 8vw, 6rem);
+        height: 1px;
+        background: var(--border);
+      }
+
+      /* ─── Experience Timeline ───────────────────────────────────────────── */
+      .timeline {
+        position: relative;
+        padding-left: 2rem;
+      }
+
+      .timeline::before {
+        content: '';
+        position: absolute;
+        left: 0; top: 0; bottom: 0;
+        width: 1px;
+        background: linear-gradient(to bottom, transparent, var(--border) 10%, var(--border) 90%, transparent);
+      }
+
+      .timeline-item {
+        position: relative;
+        margin-bottom: 2.5rem;
+        padding-left: 2rem;
+      }
+
+      .timeline-item:last-child { margin-bottom: 0; }
+
+      .timeline-dot {
+        position: absolute;
+        left: -2.5rem;
+        top: .35rem;
+        width: 10px; height: 10px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 0 3px rgba(99,102,241,.2);
+        transition: box-shadow var(--transition);
+      }
+
+      .timeline-item:hover .timeline-dot {
+        box-shadow: 0 0 0 6px rgba(99,102,241,.2);
+      }
+
+      .exp-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 1.75rem 2rem;
+        transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+      }
+
+      .exp-card:hover {
+        border-color: rgba(99,102,241,.3);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 40px rgba(0,0,0,.4), 0 0 0 1px rgba(99,102,241,.1);
+      }
+
+      .exp-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+      }
+
+      .exp-role {
+        font-family: var(--font-head);
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: .2rem;
+      }
+
+      .exp-company {
+        font-size: .9rem;
+        font-weight: 500;
+        color: var(--accent2);
+      }
+
+      .exp-date {
+        font-size: .8rem;
+        color: var(--muted);
+        white-space: nowrap;
+        background: rgba(99,102,241,.1);
+        padding: .3rem .75rem;
+        border-radius: 100px;
+        border: 1px solid rgba(99,102,241,.2);
+        flex-shrink: 0;
+      }
+
+      .exp-bullets {
+        padding-left: 1rem;
+        border-left: 2px solid rgba(99,102,241,.15);
+      }
+
+      .exp-bullets li {
+        font-size: .9rem;
+        color: var(--muted);
+        line-height: 1.7;
+        margin-bottom: .4rem;
+        padding-left: .5rem;
+        position: relative;
+      }
+
+      .exp-bullets li::before {
+        content: '›';
+        position: absolute;
+        left: -1rem;
+        color: var(--accent2);
+        font-weight: 700;
+      }
+
+      /* ─── Skills ────────────────────────────────────────────────────────── */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 1.25rem;
+        margin-bottom: 3rem;
+      }
+
+      .skill-category {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 1.5rem;
+        transition: border-color var(--transition), box-shadow var(--transition);
+      }
+
+      .skill-category:hover {
+        border-color: rgba(99,102,241,.25);
+        box-shadow: 0 4px 24px rgba(0,0,0,.3);
+      }
+
+      .skill-cat-title {
+        font-size: .75rem;
+        font-weight: 600;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        color: var(--accent2);
+        margin-bottom: 1rem;
+      }
+
+      .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem;
+      }
+
+      .skill-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: .4rem;
+        padding: .3rem .75rem;
+        border-radius: 8px;
+        background: rgba(255,255,255,.05);
+        border: 1px solid var(--border);
+        font-size: .8rem;
+        color: var(--muted);
+        transition: background var(--transition), color var(--transition), border-color var(--transition);
+        cursor: default;
+      }
+
+      .skill-tag:hover {
+        background: rgba(99,102,241,.12);
+        border-color: rgba(99,102,241,.3);
+        color: var(--text);
+      }
+
+      .skill-tag i { color: var(--accent2); font-size: .85em; }
+
+      .workflow-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: .75rem;
+      }
+
+      .workflow-item {
+        display: flex;
+        align-items: center;
+        gap: .75rem;
+        padding: .85rem 1.1rem;
+        border-radius: var(--radius);
+        background: var(--card);
+        border: 1px solid var(--border);
+        font-size: .9rem;
+        color: var(--muted);
+      }
+
+      .workflow-item i {
+        color: #22c55e;
+        font-size: .8rem;
+        flex-shrink: 0;
+      }
+
+      /* ─── Interests ─────────────────────────────────────────────────────── */
+      .interests-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1rem;
+      }
+
+      .interest-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: .75rem;
+        transition: border-color var(--transition), transform var(--transition);
+      }
+
+      .interest-card:hover {
+        border-color: rgba(99,102,241,.3);
+        transform: translateY(-2px);
+      }
+
+      .interest-icon {
+        width: 44px; height: 44px;
+        border-radius: 12px;
+        background: var(--gradient);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        color: #fff;
+        flex-shrink: 0;
+      }
+
+      .interest-title {
+        font-weight: 600;
+        font-size: .95rem;
+        color: var(--text);
+      }
+
+      .interest-desc {
+        font-size: .85rem;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      /* ─── Awards ────────────────────────────────────────────────────────── */
+      .awards-list {
+        display: flex;
+        flex-direction: column;
+        gap: .75rem;
+      }
+
+      .award-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.1rem 1.4rem;
+        border-radius: var(--radius);
+        background: var(--card);
+        border: 1px solid var(--border);
+        transition: border-color var(--transition), transform var(--transition);
+      }
+
+      .award-item:hover {
+        border-color: rgba(234,179,8,.2);
+        transform: translateX(4px);
+      }
+
+      .award-icon {
+        color: #eab308;
+        font-size: 1rem;
+        margin-top: .1rem;
+        flex-shrink: 0;
+      }
+
+      .award-text {
+        font-size: .9rem;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      /* ─── Footer ────────────────────────────────────────────────────────── */
+      footer {
+        padding: 2.5rem clamp(1.5rem, 8vw, 6rem);
+        border-top: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .footer-copy {
+        font-size: .8rem;
+        color: var(--subtle);
+      }
+
+      .footer-social {
+        display: flex;
+        gap: .75rem;
+      }
+
+      /* ─── Scroll animations ─────────────────────────────────────────────── */
+      .fade-up {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity .6s ease, transform .6s ease;
+      }
+
+      .fade-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ─── Responsive ────────────────────────────────────────────────────── */
+      @media (max-width: 768px) {
+        .nav-links { display: none; }
+        .nav-links.open {
+          display: flex;
+          flex-direction: column;
+          position: fixed;
+          top: var(--nav-h); left: 0; right: 0;
+          background: rgba(9,9,11,.95);
+          backdrop-filter: blur(20px);
+          padding: 1.5rem 2rem 2rem;
+          border-bottom: 1px solid var(--border);
+          gap: 1.25rem;
+        }
+        .nav-hamburger { display: flex; }
+        .timeline { padding-left: 1.5rem; }
+        .timeline-item { padding-left: 1.5rem; }
+        .timeline-dot { left: -2rem; }
+        .exp-header { flex-direction: column; align-items: flex-start; }
+        .social-icons { margin-left: 0; }
+      }
+
+      @media (max-width: 480px) {
+        .hero-actions { flex-direction: column; align-items: flex-start; }
+        .skills-grid { grid-template-columns: 1fr; }
+      }
+    </style>
   </head>
 
-  <body id="page-top" class="container">
-    <!-- <nav class="navbar navbar-expand-lg" id="sideNav">
-    <a class="navbar-brand js-scroll-trigger" href="#page-top">
-      <span class="d-block d-lg-none">Yunus A M</span>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#education">Education</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
-        </li>
-      </ul>
-    </div>
-  </nav> -->
-
-    <div class="container-fluid p-0">
-      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
-        <div class="my-auto">
-          <h1 class="mb-0">
-            Yunus
-            <span class="text-primary"> A M </span>
-          </h1>
-          <div class="subheading mb-5">
-            Bengaluru, Karnataka · +91 7899066282 ·
-            <a href="mailto:myounis.ar1@gmail.com"> myounis.ar1@gmail.com </a>
-          </div>
-          <p class="mb-5">
-            I am a software engineer with over 10 years of experience developing
-            robust code for high-volume businesses. An enthusiastic team player
-            and deep creative thinker. I am experienced in leveraging agile
-            frameworks to provide a robust synopsis for high level overviews.
-            Iterative approaches to corporate strategy foster collaborative
-            thinking to further the overall value proposition.
-          </p>
-          <ul class="list-inline list-social-icons mb-0">
-            <li class="list-inline-item">
-              <a href="https://www.linkedin.com/in/younix/" target="_blank">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://github.com/YounixM" target="_blank">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section
-        class="resume-section p-3 p-lg-5 d-flex flex-column"
-        id="experience"
-      >
-        <div class="my-auto">
-          <h2 class="mb-5">Experience</h2>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Founding Engineer</h3>
-              <div class="subheading mb-3">SigNoz</div>
-              <ul style="list-style-type: square">
-                <li>
-                  Responsible for End-to-End ownership of products including
-                  requirement analysis, design, coding, deployment, dev-ops, and
-                  support.
-                </li>
-                <li>
-                  Partnered with Product owners, architects, engineers as well
-                  as senior engineering leaders to develop and deliver highly
-                  scalable applications and libraries.
-                </li>
-              </ul>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary"> Aug 2023 - Present </span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Engineering Manager</h3>
-              <div class="subheading mb-3">Harness</div>
-              <ul style="list-style-type: square">
-                <li>
-                  Responsible for End-to-End ownership of products including
-                  requirement analysis, design, coding, deployment, dev-ops, and
-                  support.
-                </li>
-                <li>
-                  Led and managed projects and day-to-day activities of the team
-                  of 16 in a fast-paced environment.
-                </li>
-                <li>
-                  Partnered with Product owners, architects, engineers as well
-                  as senior engineering leaders to develop and deliver highly
-                  scalable applications and libraries.
-                </li>
-                <li>
-                  Created a high-performance culture that exceeds expectations,
-                  delivers value, and create impact
-                </li>
-                <li>
-                  Hired, coached, and mentored talented engineers to achieve
-                  goals in a challenging environment
-                </li>
-                <li>
-                  During my tenure as an IC, I worked closely with
-                  cross-functional partners in design, product, and marketing to
-                  bring new features from design to production.
-                </li>
-                <li>
-                  Effectively advise stakeholders on the technical scope and
-                  feasibility of complex product requirements.
-                </li>
-              </ul>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary"> Sep 2020 - Aug 2023 </span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Senior Frontend Engineer</h3>
-              <div class="subheading mb-3">POSTMAN</div>
-              <ul style="list-style-type: square">
-                <li>
-                  Designed and Developed front-end functionality of dashboard
-                  and documenter using React, Redux, React Saga. Interact with
-                  the designers at the initial stages, develop custom
-                  components.
-                </li>
-                <li>
-                  Contribute towards improving quality and performance of
-                  Postman App.
-                </li>
-                <li>
-                  Implement Internationalisation across multiple platforms in
-                  Postman.
-                </li>
-                <li>
-                  Worked on POC to develop developer tools according to the
-                  needs of Postman developer to help improve Developer
-                  Experience.
-                </li>
-                <li>
-                  Worked with the design team to create reusable components in
-                  React and to implement a design language across Postman.
-                </li>
-                <li>
-                  Contribute towards writing services for Documenter using
-                  NodeJs ( Sails Js).
-                </li>
-                <li>
-                  Contribute towards maintaining 99.9 % Quality metric score for
-                  Documenter.
-                </li>
-                <li>
-                  Work closely with UI/UX designers and backend engineers to
-                  ensure client design requirements are met and system
-                  consistency.
-                </li>
-                <li>
-                  Design and build well-tested libraries to be reused across the
-                  application suite.
-                </li>
-                <li>
-                  Manage and mentor a team of UI engineers to ensure the timely
-                  delivery of specific product features.
-                </li>
-                <li>
-                  Work to rigorous deadlines, while maintaining high quality
-                  standards.
-                </li>
-              </ul>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary"> Feb 2019 - Sep 2020 </span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Software Engineer</h3>
-              <div class="subheading mb-3">Morgan Stanley</div>
-              <ul style="list-style-type: square">
-                <li>
-                  Hands-on design, implementation, testing, and maintenance of
-                  highly usable and engaging application interfaces for PWM
-                  application using Angular 4.
-                </li>
-                <li>
-                  Create custom components and directives to handle specific
-                  requirements.
-                </li>
-                <li>
-                  Create custom component to automate the process of workflow
-                  generation.
-                </li>
-                <li>
-                  Work closely with UI/UX designers and backend engineers to
-                  ensure client design requirements are met and system
-                  consistency.
-                </li>
-                <li>
-                  Design and build well-tested libraries to be reused across the
-                  application suite.
-                </li>
-                <li>
-                  Manage and mentor a team of UI engineers to ensure the timely
-                  delivery of specific product features.
-                </li>
-                <li>
-                  Work to rigorous deadlines, while maintaining high quality
-                  standards.
-                </li>
-              </ul>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary"> Feb 2018 - Feb 2019</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Software Engineer</h3>
-              <div class="subheading mb-3">Cready Technologies Pvt Ltd</div>
-              <ul style="list-style-type: square">
-                <li>
-                  Designed and Developed front-end functionality of website
-                  using Angular 2/4, interact with the designer at the initial
-                  stages, develop custom components.
-                </li>
-                <li>
-                  Used google analytics to track user behavior and improve UX,
-                  continuously interact with users to improve UX.
-                </li>
-                <li>
-                  Improved SEO, improved lighthouse score and google page
-                  insights score by continuously improving the performance.
-                </li>
-                <li>
-                  Implemented Lazy Loading and Pre-Loading strategy to improve
-                  website performance. Implemented PWA features for the
-                  application to work offline.
-                </li>
-                <li>
-                  Implemented Server-Side Rendering using Angular Universal.
-                </li>
-              </ul>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary"> Jan 2017 - Feb 2018</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Senior Systems Engineer</h3>
-              <div class="subheading mb-3">Infosys Technologies Pvt Ltd</div>
-              <ul style="list-style-type: square">
-                <li>
-                  Build a responsive corporate web applications for X Insurance
-                  company. This application includes user registration,
-                  insurance quoting, payment and user policy management.
-                </li>
-                <li>
-                  Interact with the client to understand the requirements.
-                </li>
-                <li>
-                  Lead development team for Internal user management and
-                  self-service modules.
-                </li>
-                <li>
-                  Developing the front-end functionality of the website using
-                  AngularJS 1.3.
-                </li>
-                <li>
-                  Provide guidance to other team members on development issues,
-                  Unit Testing.
-                </li>
-                <li>
-                  Build a system which is used by the agent for converting a
-                  Quote to Policy.
-                </li>
-                <li>Redesigning and prototype creation for the proposal.</li>
-                <li>
-                  Responsive UI design and development of the actual project.
-                </li>
-              </ul>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary"> Feb 2014 - Jan 2017</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
-      <div class="my-auto">
-        <h2 class="mb-5">Education</h2>
-
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-          <div class="resume-content mr-auto">
-            <h3 class="mb-0"> Basaveshwar Engineering College </h3>
-            <div class="subheading mb-3">Bachelor of Engineering</div>
-            <div>Computer Science And Engineering</div>
-            <p> CGPA : 7.45 </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary"> Aug 2009 - May 2013 </span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-          <div class="resume-content mr-auto">
-            <h3 class="mb-0"> Basaveshwar Science College </h3>
-            <div class="subheading mb-3"> Pre-University Education </div>
-            <div> Physics, Chemistry, Mathematics, Biology </div>
-            <p> First Class : 68.83 % </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary"> July 2007 - Apr 2009 </span>
-          </div>
-        </div>
-
+  <body>
+    <!-- ─── Navigation ─────────────────────────────────────────────────── -->
+    <nav id="navbar">
+      <span class="nav-logo">Yunus A M</span>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#interests">Interests</a>
+        <a href="#awards">Awards</a>
       </div>
-    </section> -->
+      <div class="nav-hamburger" id="hamburger" onclick="toggleNav()" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
 
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
-        <div class="my-auto">
-          <h2 class="mb-5">Skills</h2>
+    <!-- ─── Hero ───────────────────────────────────────────────────────── -->
+    <section id="about">
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div id="hero">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="dot"></span>
+            Open to opportunities
+          </div>
 
-          <div class="subheading mb-3">Programming Languages &amp; Tools</div>
-          <ul class="list-inline list-icons">
-            <li class="list-inline-item">
-              <i class="devicons devicons-react"></i>
-            </li>
+          <h1 class="hero-name">
+            Yunus<br />
+            <span class="gradient-text">A M</span>
+          </h1>
 
-            <li class="list-inline-item">
-              <i class="devicons devicons-javascript"></i>
-            </li>
+          <p class="hero-title">Founding Engineer &amp; Engineering Manager</p>
 
-            <li class="list-inline-item">
-              <i class="devicons devicons-nodejs"></i>
-            </li>
-
-            <li class="list-inline-item">
-              <i class="devicons devicons-ionic"></i>
-            </li>
-
-            <li class="list-inline-item">
-              <i class="devicons devicons-angular"></i>
-            </li>
-
-            <li class="list-inline-item">
-              <i class="devicons devicons-docker"></i>
-            </li>
-
-            <li class="list-inline-item">
-              <i class="devicons devicons-html5"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-css3"></i>
-            </li>
-
-            <li class="list-inline-item">
-              <i class="devicons devicons-python"></i>
-            </li>
-
-            <li class="list-inline-item">
-              <i class="devicons devicons-django"></i>
-            </li>
-
-            <li class="list-inline-item">
-              <i class="devicons devicons-git"></i>
-            </li>
-
-            <li class="list-inline-item">
-              <i class="devicons devicons-jquery"></i>
-            </li>
-
-            <li class="list-inline-item">
-              <i class="devicons devicons-sass"></i>
-            </li>
-
-            <li class="list-inline-item">
-              <i class="devicons devicons-bootstrap"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-wordpress"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-npm"></i>
-            </li>
-          </ul>
-
-          <div class="subheading mb-3">Workflow</div>
-          <ul class="fa-ul mb-0">
-            <li>
-              <i class="fa-li fa fa-check"></i> Mobile-First, Responsive Design
-            </li>
-            <li>
-              <i class="fa-li fa fa-check"></i> Cross Browser Testing &amp;
-              Debugging
-            </li>
-            <li><i class="fa-li fa fa-check"></i> Cross Functional Teams</li>
-            <li>
-              <i class="fa-li fa fa-check"></i> Agile Development &amp; Scrum
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section
-        class="resume-section p-3 p-lg-5 d-flex flex-column"
-        id="interests"
-      >
-        <div class="my-auto">
-          <h2 class="mb-5">Interests</h2>
-          <p>
-            Apart from being a software engineer, I am a passionate quizzer and
-            enjoy quizzing. I was among the top 5 corporate teams all over India
-            in Croma Tech Grandmasters Season 3 hosted by NDTV Good times..
+          <p class="hero-bio">
+            Software engineer with 10+ years of experience building high-scale products.
+            Deep expertise in frontend engineering, team leadership, and full-stack development
+            across React, Node.js, and cloud-native stacks.
           </p>
-          <p class="mb-0">
-            I enjoy most of my time being outdoors. I enjoy hiking, long bike
-            trips and camping. I also spend some of my time playing basketball,
-            cricket, table tennis and paintball.
-          </p>
+
+          <div class="hero-meta">
+            <span><i class="fa-solid fa-location-dot"></i> &nbsp;Bengaluru, Karnataka</span>
+            <span><i class="fa-solid fa-phone"></i> &nbsp;+91 7899066282</span>
+            <span><i class="fa-solid fa-envelope"></i> &nbsp;<a href="mailto:myounis.ar1@gmail.com" style="color: var(--accent2)">myounis.ar1@gmail.com</a></span>
+          </div>
+
+          <div class="hero-actions">
+            <a href="mailto:myounis.ar1@gmail.com" class="btn-primary-grad">
+              <i class="fa-solid fa-paper-plane"></i> Get in touch
+            </a>
+            <div class="social-icons">
+              <a href="https://www.linkedin.com/in/younix/" target="_blank" rel="noopener" class="social-icon" title="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com/YounixM" target="_blank" rel="noopener" class="social-icon" title="GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
-        <div class="my-auto">
-          <h2 class="mb-5">Awards &amp; Certifications</h2>
-          <ul class="fa-ul mb-0">
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i> Mobile Sites -
-              Google Certification
-            </li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i> Microsoft
-              Certified Professional
-            </li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i> Microsoft
-              Certified Solutions Associate – Web Applications
-            </li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i> Microsoft
-              Certified Solutions Developer – Windows Store Apps Using HTML5.
-            </li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i> Microsoft
-              Specialist: Programming in HTML5 with JavaScript and CSS3
-              specialist.
-            </li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i> Microsoft
-              Specialist: Programming in C#.
-            </li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i> 1st Prize -
-              Mindtree Hackathon 2015
-            </li>
-          </ul>
+    <!-- ─── Experience ─────────────────────────────────────────────────── -->
+    <section class="section" id="experience">
+      <div class="section-inner">
+        <div class="section-label">Career</div>
+        <h2 class="section-title">Experience</h2>
+
+        <div class="timeline">
+
+          <div class="timeline-item fade-up">
+            <div class="timeline-dot"></div>
+            <div class="exp-card">
+              <div class="exp-header">
+                <div>
+                  <div class="exp-role">Founding Engineer</div>
+                  <div class="exp-company">SigNoz</div>
+                </div>
+                <span class="exp-date">Aug 2023 – Present</span>
+              </div>
+              <ul class="exp-bullets">
+                <li>End-to-end ownership of products — requirement analysis, design, coding, deployment, DevOps, and support.</li>
+                <li>Partnered with product owners, architects, and senior engineering leaders to deliver highly scalable applications and libraries.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-up">
+            <div class="timeline-dot"></div>
+            <div class="exp-card">
+              <div class="exp-header">
+                <div>
+                  <div class="exp-role">Engineering Manager</div>
+                  <div class="exp-company">Harness</div>
+                </div>
+                <span class="exp-date">Sep 2020 – Aug 2023</span>
+              </div>
+              <ul class="exp-bullets">
+                <li>Led and managed a team of 16 engineers in a fast-paced, high-growth environment.</li>
+                <li>Built a high-performance culture that exceeds expectations, delivers value, and creates impact.</li>
+                <li>Hired, coached, and mentored talented engineers to achieve goals in a challenging environment.</li>
+                <li>Worked closely with cross-functional partners — design, product, and marketing — to bring features from design to production.</li>
+                <li>Advised stakeholders on technical scope and feasibility of complex product requirements.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-up">
+            <div class="timeline-dot"></div>
+            <div class="exp-card">
+              <div class="exp-header">
+                <div>
+                  <div class="exp-role">Senior Frontend Engineer</div>
+                  <div class="exp-company">Postman</div>
+                </div>
+                <span class="exp-date">Feb 2019 – Sep 2020</span>
+              </div>
+              <ul class="exp-bullets">
+                <li>Designed and developed frontend features for the dashboard and documenter using React, Redux, and Redux Saga.</li>
+                <li>Implemented internationalisation across multiple platforms.</li>
+                <li>Led POC for developer tools to improve Developer Experience.</li>
+                <li>Worked with the design team to implement a unified design language across Postman.</li>
+                <li>Contributed to NodeJS (Sails.js) services for Documenter; maintained 99.9% quality metric score.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-up">
+            <div class="timeline-dot"></div>
+            <div class="exp-card">
+              <div class="exp-header">
+                <div>
+                  <div class="exp-role">Software Engineer</div>
+                  <div class="exp-company">Morgan Stanley</div>
+                </div>
+                <span class="exp-date">Feb 2018 – Feb 2019</span>
+              </div>
+              <ul class="exp-bullets">
+                <li>Designed and built engaging application interfaces for PWM using Angular 4.</li>
+                <li>Created custom components and directives; automated workflow generation processes.</li>
+                <li>Collaborated with UI/UX designers and backend engineers to ensure design consistency.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-up">
+            <div class="timeline-dot"></div>
+            <div class="exp-card">
+              <div class="exp-header">
+                <div>
+                  <div class="exp-role">Software Engineer</div>
+                  <div class="exp-company">Cready Technologies</div>
+                </div>
+                <span class="exp-date">Jan 2017 – Feb 2018</span>
+              </div>
+              <ul class="exp-bullets">
+                <li>Developed frontend using Angular 2/4; implemented Lazy Loading, Pre-Loading, and PWA features.</li>
+                <li>Improved SEO, Lighthouse score, and Google PageSpeed Insights via continuous performance tuning.</li>
+                <li>Implemented Server-Side Rendering using Angular Universal.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-up">
+            <div class="timeline-dot"></div>
+            <div class="exp-card">
+              <div class="exp-header">
+                <div>
+                  <div class="exp-role">Senior Systems Engineer</div>
+                  <div class="exp-company">Infosys Technologies</div>
+                </div>
+                <span class="exp-date">Feb 2014 – Jan 2017</span>
+              </div>
+              <ul class="exp-bullets">
+                <li>Built responsive corporate web applications for an insurance company — registration, quoting, payment, and policy management.</li>
+                <li>Led development of internal user management and self-service modules using AngularJS 1.3.</li>
+                <li>Provided technical guidance and mentoring to development team members.</li>
+              </ul>
+            </div>
+          </div>
+
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ─── Skills ─────────────────────────────────────────────────────── -->
+    <section class="section" id="skills">
+      <div class="section-inner">
+        <div class="section-label">Expertise</div>
+        <h2 class="section-title">Skills</h2>
 
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+        <div class="skills-grid">
+          <div class="skill-category fade-up">
+            <div class="skill-cat-title">Frontend</div>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="fa-brands fa-react"></i> React</span>
+              <span class="skill-tag"><i class="fa-brands fa-angular"></i> Angular</span>
+              <span class="skill-tag"><i class="fa-brands fa-js"></i> JavaScript</span>
+              <span class="skill-tag"><i class="fa-brands fa-html5"></i> HTML5</span>
+              <span class="skill-tag"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+              <span class="skill-tag"><i class="fa-brands fa-sass"></i> Sass</span>
+            </div>
+          </div>
 
-    <!-- Custom scripts for this template -->
-    <script src="js/resume.min.js"></script>
+          <div class="skill-category fade-up">
+            <div class="skill-cat-title">Backend &amp; Runtime</div>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="fa-brands fa-node-js"></i> Node.js</span>
+              <span class="skill-tag"><i class="fa-brands fa-python"></i> Python</span>
+              <span class="skill-tag"><i class="fa-solid fa-server"></i> Django</span>
+            </div>
+          </div>
+
+          <div class="skill-category fade-up">
+            <div class="skill-cat-title">Tools &amp; DevOps</div>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="fa-brands fa-docker"></i> Docker</span>
+              <span class="skill-tag"><i class="fa-brands fa-git-alt"></i> Git</span>
+              <span class="skill-tag"><i class="fa-brands fa-npm"></i> npm</span>
+              <span class="skill-tag"><i class="fa-brands fa-bootstrap"></i> Bootstrap</span>
+            </div>
+          </div>
+
+          <div class="skill-category fade-up">
+            <div class="skill-cat-title">Mobile</div>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="fa-solid fa-mobile-screen"></i> Ionic</span>
+              <span class="skill-tag"><i class="fa-solid fa-mobile"></i> PWA</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-label" style="margin-bottom: 1.25rem;">Workflow</div>
+        <div class="workflow-list">
+          <div class="workflow-item fade-up"><i class="fa-solid fa-check"></i> Mobile-First, Responsive Design</div>
+          <div class="workflow-item fade-up"><i class="fa-solid fa-check"></i> Cross Browser Testing &amp; Debugging</div>
+          <div class="workflow-item fade-up"><i class="fa-solid fa-check"></i> Cross Functional Teams</div>
+          <div class="workflow-item fade-up"><i class="fa-solid fa-check"></i> Agile Development &amp; Scrum</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Interests ──────────────────────────────────────────────────── -->
+    <section class="section" id="interests">
+      <div class="section-inner">
+        <div class="section-label">Beyond Code</div>
+        <h2 class="section-title">Interests</h2>
+
+        <div class="interests-grid">
+          <div class="interest-card fade-up">
+            <div class="interest-icon">🧠</div>
+            <div class="interest-title">Quizzing</div>
+            <div class="interest-desc">Passionate quizzer — among the top 5 corporate teams nationally in Croma Tech Grandmasters Season 3 on NDTV Good Times.</div>
+          </div>
+          <div class="interest-card fade-up">
+            <div class="interest-icon">🥾</div>
+            <div class="interest-title">Hiking</div>
+            <div class="interest-desc">Love spending time outdoors on long hikes and trekking through scenic terrain.</div>
+          </div>
+          <div class="interest-card fade-up">
+            <div class="interest-icon">🏍️</div>
+            <div class="interest-title">Bike Trips</div>
+            <div class="interest-desc">Enjoy long motorcycle road trips and camping adventures across India.</div>
+          </div>
+          <div class="interest-card fade-up">
+            <div class="interest-icon">🏀</div>
+            <div class="interest-title">Sports</div>
+            <div class="interest-desc">Active in basketball, cricket, table tennis, and paintball.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Awards ─────────────────────────────────────────────────────── -->
+    <section class="section" id="awards">
+      <div class="section-inner">
+        <div class="section-label">Recognition</div>
+        <h2 class="section-title">Awards &amp; Certifications</h2>
+
+        <div class="awards-list">
+          <div class="award-item fade-up">
+            <i class="fa-solid fa-trophy award-icon"></i>
+            <span class="award-text">Mobile Sites — Google Certification</span>
+          </div>
+          <div class="award-item fade-up">
+            <i class="fa-solid fa-trophy award-icon"></i>
+            <span class="award-text">Microsoft Certified Professional</span>
+          </div>
+          <div class="award-item fade-up">
+            <i class="fa-solid fa-trophy award-icon"></i>
+            <span class="award-text">Microsoft Certified Solutions Associate – Web Applications</span>
+          </div>
+          <div class="award-item fade-up">
+            <i class="fa-solid fa-trophy award-icon"></i>
+            <span class="award-text">Microsoft Certified Solutions Developer – Windows Store Apps Using HTML5</span>
+          </div>
+          <div class="award-item fade-up">
+            <i class="fa-solid fa-trophy award-icon"></i>
+            <span class="award-text">Microsoft Specialist: Programming in HTML5 with JavaScript and CSS3</span>
+          </div>
+          <div class="award-item fade-up">
+            <i class="fa-solid fa-trophy award-icon"></i>
+            <span class="award-text">Microsoft Specialist: Programming in C#</span>
+          </div>
+          <div class="award-item fade-up">
+            <i class="fa-solid fa-trophy award-icon"></i>
+            <span class="award-text">1st Prize — Mindtree Hackathon 2015</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Footer ─────────────────────────────────────────────────────── -->
+    <footer>
+      <span class="footer-copy">&copy; 2024 Yunus A M. Built with passion.</span>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/younix/" target="_blank" rel="noopener" class="social-icon" title="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/YounixM" target="_blank" rel="noopener" class="social-icon" title="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="mailto:myounis.ar1@gmail.com" class="social-icon" title="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile nav toggle
+      function toggleNav() {
+        document.getElementById('navLinks').classList.toggle('open');
+      }
+
+      // Close nav when a link is clicked
+      document.querySelectorAll('.nav-links a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          document.getElementById('navLinks').classList.remove('open');
+        });
+      });
+
+      // Scroll animation observer
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.fade-up').forEach(function(el) {
+        observer.observe(el);
+      });
+
+      // Staggered animation delay for siblings
+      document.querySelectorAll('.timeline-item, .skill-category, .interest-card, .award-item, .workflow-item').forEach(function(el, i) {
+        el.style.transitionDelay = (i % 4) * 80 + 'ms';
+      });
+    </script>
   </body>
 </html>
