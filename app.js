@@ -22,6 +22,58 @@
     syncToggle();
   });
 
+  // Accent color picker: persist + apply --accent (--accent-soft is derived
+  // from --accent in CSS via color-mix, so it tracks theme automatically).
+  const ACCENTS = {
+    orange: "oklch(0.78 0.16 55)",
+    lime:   "oklch(0.85 0.18 130)",
+    forest: "oklch(0.55 0.13 150)",
+    ocean:  "oklch(0.65 0.13 235)",
+    purple: "oklch(0.62 0.18 295)"
+  };
+  const ACCENT_KEY = "accent";
+  const accentPicker = document.querySelector(".accent-picker");
+  const accentTrigger = document.getElementById("accent-trigger");
+  const accentButtons = document.querySelectorAll(".accent-menu button");
+
+  const applyAccent = (name) => {
+    const color = ACCENTS[name];
+    if (!color) return;
+    root.style.setProperty("--accent", color);
+    accentButtons.forEach((btn) => {
+      btn.setAttribute("aria-pressed", String(btn.dataset.accent === name));
+    });
+  };
+
+  const setAccentMenuOpen = (open) => {
+    accentPicker.dataset.open = String(open);
+    accentTrigger.setAttribute("aria-expanded", String(open));
+  };
+
+  const storedAccent = localStorage.getItem(ACCENT_KEY);
+  if (storedAccent && ACCENTS[storedAccent]) applyAccent(storedAccent);
+
+  accentTrigger.addEventListener("click", (e) => {
+    e.stopPropagation();
+    setAccentMenuOpen(accentPicker.dataset.open !== "true");
+  });
+
+  accentButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const name = btn.dataset.accent;
+      applyAccent(name);
+      localStorage.setItem(ACCENT_KEY, name);
+      setAccentMenuOpen(false);
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!accentPicker.contains(e.target)) setAccentMenuOpen(false);
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setAccentMenuOpen(false);
+  });
+
   // Live IST clock in the hero meta pill.
   const timeEl = document.getElementById("ist-time");
   if (timeEl) {
