@@ -1,545 +1,403 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="Resume" />
-    <meta name="author" content="Yunus A M" />
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yunus A M — Founding Engineer</title>
+  <meta name="description" content="Yunus A M — founding engineer at SigNoz. A decade of building product, leading teams, and shipping observable systems people trust." />
 
-    <title>Yunus A M - Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
 
-    <!-- Custom fonts for this template -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
-      rel="stylesheet"
-    />
-    <link
-      href="vendor/font-awesome/css/font-awesome.min.css"
-      rel="stylesheet"
-    />
-    <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet" />
-    <link
-      href="vendor/simple-line-icons/css/simple-line-icons.css"
-      rel="stylesheet"
-    />
-
-    <!-- Custom styles for this template -->
-    <link href="css/resume.min.css" rel="stylesheet" />
-  </head>
-
-  <body id="page-top" class="container">
-    <!-- <nav class="navbar navbar-expand-lg" id="sideNav">
-    <a class="navbar-brand js-scroll-trigger" href="#page-top">
-      <span class="d-block d-lg-none">Yunus A M</span>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#education">Education</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
-        </li>
-      </ul>
+  <!-- ===== Nav ============================================================ -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#top" class="nav-mark">
+        <span class="dot"></span>
+        <span>Yunus</span>
+        <span style="color: var(--fg-3)">// engineering</span>
+      </a>
+      <div class="nav-links">
+        <a href="#work"><span class="num">01</span>Work</a>
+        <a href="#path"><span class="num">02</span>Path</a>
+        <a href="#skills"><span class="num">03</span>Skills</a>
+        <a href="#beyond"><span class="num">04</span>Beyond</a>
+        <button type="button" class="theme-toggle" id="theme-toggle" role="switch" aria-checked="true" aria-label="Toggle dark mode">
+          <span class="tt-track">
+            <span class="tt-icon tt-sun" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+              </svg>
+            </span>
+            <span class="tt-icon tt-moon" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+              </svg>
+            </span>
+            <span class="tt-thumb"></span>
+          </span>
+        </button>
+        <a href="#contact" class="cta">Get in touch ↗</a>
+      </div>
     </div>
-  </nav> -->
+  </nav>
 
-    <div class="container-fluid p-0">
-      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
-        <div class="my-auto">
-          <h1 class="mb-0">
-            Yunus
-            <span class="text-primary"> A M </span>
-          </h1>
-          <div class="subheading mb-5">
-            Bengaluru, Karnataka · +91 7899066282 ·
-            <a href="mailto:myounis.ar1@gmail.com"> myounis.ar1@gmail.com </a>
+  <!-- ===== Hero =========================================================== -->
+  <header class="hero" id="top">
+    <div class="hero-grid"></div>
+    <div class="wrap" style="position: relative">
+      <div class="hero-meta reveal in">
+        <span class="pill"><span class="live-dot"></span> Available · <span id="ist-time">—</span></span>
+        <span class="pill">Bengaluru, IN</span>
+        <span class="pill">v.2026.04</span>
+      </div>
+      <h1 class="reveal in">
+        Engineer building <span class="swap">observable</span><br />
+        systems people actually <span class="accent">trust</span>.
+      </h1>
+      <p class="hero-sub reveal in">
+        I'm Yunus — a software engineer with a decade of building product, leading teams, and
+        owning things end-to-end. Currently a founding engineer at <em>SigNoz</em>, where we make
+        open-source observability that doesn't suck. Before that: Harness, Postman, Morgan
+        Stanley, and a long apprenticeship shipping production frontend.
+      </p>
+      <div class="hero-stats reveal in">
+        <div class="stat"><div class="k">Years building</div><div class="v">10+</div></div>
+        <div class="stat"><div class="k">Currently</div><div class="v">Founding Eng</div></div>
+        <div class="stat"><div class="k">Based in</div><div class="v">Bengaluru</div></div>
+        <div class="stat"><div class="k">Open to</div><div class="v">Conversations</div></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Selected work ================================================== -->
+  <!-- To add a role: copy a .work-item block and bump the leading number.   -->
+  <section class="section" id="work">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <div class="label"><span class="label-num">01</span> Selected Work</div>
+        <h2 class="section-title">Places I've shown up and shipped.</h2>
+        <p class="section-lede">Four roles that defined the last decade — from founding teams to leading them, from finance to developer tools.</p>
+      </header>
+
+      <div class="work-list">
+
+        <article class="work-item reveal">
+          <div class="work-num">01</div>
+          <div>
+            <div class="work-name">SigNoz</div>
+            <div class="work-role">Founding Engineer · 2023 — Now</div>
           </div>
-          <p class="mb-5">
-            I am a software engineer with over 10 years of experience developing
-            robust code for high-volume businesses. An enthusiastic team player
-            and deep creative thinker. I am experienced in leveraging agile
-            frameworks to provide a robust synopsis for high level overviews.
-            Iterative approaches to corporate strategy foster collaborative
-            thinking to further the overall value proposition.
-          </p>
-          <ul class="list-inline list-social-icons mb-0">
-            <li class="list-inline-item">
-              <a href="https://www.linkedin.com/in/younix/" target="_blank">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://github.com/YounixM" target="_blank">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section
-        class="resume-section p-3 p-lg-5 d-flex flex-column"
-        id="experience"
-      >
-        <div class="my-auto">
-          <h2 class="mb-5">Experience</h2>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Founding Engineer</h3>
-              <div class="subheading mb-3">SigNoz</div>
-              <ul style="list-style-type: square">
-                <li>
-                  Responsible for End-to-End ownership of products including
-                  requirement analysis, design, coding, deployment, dev-ops, and
-                  support.
-                </li>
-                <li>
-                  Partnered with Product owners, architects, engineers as well
-                  as senior engineering leaders to develop and deliver highly
-                  scalable applications and libraries.
-                </li>
-              </ul>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary"> Aug 2023 - Present </span>
+          <div class="work-body">
+            <p class="work-desc">Building an open-source observability platform. End-to-end ownership across product, architecture, deploys and on-call. Working close to the metal on traces, logs and metrics at scale.</p>
+            <div class="tag-list">
+              <span class="tag">OpenTelemetry</span>
+              <span class="tag">ClickHouse</span>
+              <span class="tag">Go</span>
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
             </div>
           </div>
+          <div class="work-arrow">↗</div>
+        </article>
 
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Engineering Manager</h3>
-              <div class="subheading mb-3">Harness</div>
-              <ul style="list-style-type: square">
-                <li>
-                  Responsible for End-to-End ownership of products including
-                  requirement analysis, design, coding, deployment, dev-ops, and
-                  support.
-                </li>
-                <li>
-                  Led and managed projects and day-to-day activities of the team
-                  of 16 in a fast-paced environment.
-                </li>
-                <li>
-                  Partnered with Product owners, architects, engineers as well
-                  as senior engineering leaders to develop and deliver highly
-                  scalable applications and libraries.
-                </li>
-                <li>
-                  Created a high-performance culture that exceeds expectations,
-                  delivers value, and create impact
-                </li>
-                <li>
-                  Hired, coached, and mentored talented engineers to achieve
-                  goals in a challenging environment
-                </li>
-                <li>
-                  During my tenure as an IC, I worked closely with
-                  cross-functional partners in design, product, and marketing to
-                  bring new features from design to production.
-                </li>
-                <li>
-                  Effectively advise stakeholders on the technical scope and
-                  feasibility of complex product requirements.
-                </li>
-              </ul>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary"> Sep 2020 - Aug 2023 </span>
+        <article class="work-item reveal">
+          <div class="work-num">02</div>
+          <div>
+            <div class="work-name">Harness</div>
+            <div class="work-role">Engineering Manager · 2020 — 2023</div>
+          </div>
+          <div class="work-body">
+            <p class="work-desc">Led a team of 16 across CI/CD and platform initiatives. Hired, mentored, and shipped — partnering with design, product and senior engineering on highly-scalable applications.</p>
+            <div class="tag-list">
+              <span class="tag">Leadership</span>
+              <span class="tag">Hiring</span>
+              <span class="tag">CI/CD</span>
+              <span class="tag">Platform</span>
             </div>
           </div>
+          <div class="work-arrow">↗</div>
+        </article>
 
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Senior Frontend Engineer</h3>
-              <div class="subheading mb-3">POSTMAN</div>
-              <ul style="list-style-type: square">
-                <li>
-                  Designed and Developed front-end functionality of dashboard
-                  and documenter using React, Redux, React Saga. Interact with
-                  the designers at the initial stages, develop custom
-                  components.
-                </li>
-                <li>
-                  Contribute towards improving quality and performance of
-                  Postman App.
-                </li>
-                <li>
-                  Implement Internationalisation across multiple platforms in
-                  Postman.
-                </li>
-                <li>
-                  Worked on POC to develop developer tools according to the
-                  needs of Postman developer to help improve Developer
-                  Experience.
-                </li>
-                <li>
-                  Worked with the design team to create reusable components in
-                  React and to implement a design language across Postman.
-                </li>
-                <li>
-                  Contribute towards writing services for Documenter using
-                  NodeJs ( Sails Js).
-                </li>
-                <li>
-                  Contribute towards maintaining 99.9 % Quality metric score for
-                  Documenter.
-                </li>
-                <li>
-                  Work closely with UI/UX designers and backend engineers to
-                  ensure client design requirements are met and system
-                  consistency.
-                </li>
-                <li>
-                  Design and build well-tested libraries to be reused across the
-                  application suite.
-                </li>
-                <li>
-                  Manage and mentor a team of UI engineers to ensure the timely
-                  delivery of specific product features.
-                </li>
-                <li>
-                  Work to rigorous deadlines, while maintaining high quality
-                  standards.
-                </li>
-              </ul>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary"> Feb 2019 - Sep 2020 </span>
+        <article class="work-item reveal">
+          <div class="work-num">03</div>
+          <div>
+            <div class="work-name">Postman</div>
+            <div class="work-role">Senior Frontend Engineer · 2019 — 2020</div>
+          </div>
+          <div class="work-body">
+            <p class="work-desc">Designed and shipped Documenter and dashboard surfaces in React/Redux/Saga. Built a shared component library, drove i18n across platforms, and held a 99.9% quality bar.</p>
+            <div class="tag-list">
+              <span class="tag">React</span>
+              <span class="tag">Redux</span>
+              <span class="tag">Sails.js</span>
+              <span class="tag">Design Systems</span>
             </div>
           </div>
+          <div class="work-arrow">↗</div>
+        </article>
 
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Software Engineer</h3>
-              <div class="subheading mb-3">Morgan Stanley</div>
-              <ul style="list-style-type: square">
-                <li>
-                  Hands-on design, implementation, testing, and maintenance of
-                  highly usable and engaging application interfaces for PWM
-                  application using Angular 4.
-                </li>
-                <li>
-                  Create custom components and directives to handle specific
-                  requirements.
-                </li>
-                <li>
-                  Create custom component to automate the process of workflow
-                  generation.
-                </li>
-                <li>
-                  Work closely with UI/UX designers and backend engineers to
-                  ensure client design requirements are met and system
-                  consistency.
-                </li>
-                <li>
-                  Design and build well-tested libraries to be reused across the
-                  application suite.
-                </li>
-                <li>
-                  Manage and mentor a team of UI engineers to ensure the timely
-                  delivery of specific product features.
-                </li>
-                <li>
-                  Work to rigorous deadlines, while maintaining high quality
-                  standards.
-                </li>
-              </ul>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary"> Feb 2018 - Feb 2019</span>
+        <article class="work-item reveal">
+          <div class="work-num">04</div>
+          <div>
+            <div class="work-name">Morgan Stanley</div>
+            <div class="work-role">Software Engineer · 2018 — 2019</div>
+          </div>
+          <div class="work-body">
+            <p class="work-desc">Built engaging interfaces for the PWM application in Angular 4 — custom components, workflow automation tooling, and a reusable library shared across the application suite.</p>
+            <div class="tag-list">
+              <span class="tag">Angular</span>
+              <span class="tag">Finance</span>
+              <span class="tag">Workflow</span>
             </div>
           </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Software Engineer</h3>
-              <div class="subheading mb-3">Cready Technologies Pvt Ltd</div>
-              <ul style="list-style-type: square">
-                <li>
-                  Designed and Developed front-end functionality of website
-                  using Angular 2/4, interact with the designer at the initial
-                  stages, develop custom components.
-                </li>
-                <li>
-                  Used google analytics to track user behavior and improve UX,
-                  continuously interact with users to improve UX.
-                </li>
-                <li>
-                  Improved SEO, improved lighthouse score and google page
-                  insights score by continuously improving the performance.
-                </li>
-                <li>
-                  Implemented Lazy Loading and Pre-Loading strategy to improve
-                  website performance. Implemented PWA features for the
-                  application to work offline.
-                </li>
-                <li>
-                  Implemented Server-Side Rendering using Angular Universal.
-                </li>
-              </ul>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary"> Jan 2017 - Feb 2018</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Senior Systems Engineer</h3>
-              <div class="subheading mb-3">Infosys Technologies Pvt Ltd</div>
-              <ul style="list-style-type: square">
-                <li>
-                  Build a responsive corporate web applications for X Insurance
-                  company. This application includes user registration,
-                  insurance quoting, payment and user policy management.
-                </li>
-                <li>
-                  Interact with the client to understand the requirements.
-                </li>
-                <li>
-                  Lead development team for Internal user management and
-                  self-service modules.
-                </li>
-                <li>
-                  Developing the front-end functionality of the website using
-                  AngularJS 1.3.
-                </li>
-                <li>
-                  Provide guidance to other team members on development issues,
-                  Unit Testing.
-                </li>
-                <li>
-                  Build a system which is used by the agent for converting a
-                  Quote to Policy.
-                </li>
-                <li>Redesigning and prototype creation for the proposal.</li>
-                <li>
-                  Responsive UI design and development of the actual project.
-                </li>
-              </ul>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary"> Feb 2014 - Jan 2017</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
-      <div class="my-auto">
-        <h2 class="mb-5">Education</h2>
-
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-          <div class="resume-content mr-auto">
-            <h3 class="mb-0"> Basaveshwar Engineering College </h3>
-            <div class="subheading mb-3">Bachelor of Engineering</div>
-            <div>Computer Science And Engineering</div>
-            <p> CGPA : 7.45 </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary"> Aug 2009 - May 2013 </span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-          <div class="resume-content mr-auto">
-            <h3 class="mb-0"> Basaveshwar Science College </h3>
-            <div class="subheading mb-3"> Pre-University Education </div>
-            <div> Physics, Chemistry, Mathematics, Biology </div>
-            <p> First Class : 68.83 % </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary"> July 2007 - Apr 2009 </span>
-          </div>
-        </div>
+          <div class="work-arrow">↗</div>
+        </article>
 
       </div>
-    </section> -->
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
-        <div class="my-auto">
-          <h2 class="mb-5">Skills</h2>
-
-          <div class="subheading mb-3">Programming Languages &amp; Tools</div>
-          <ul class="list-inline list-icons">
-            <li class="list-inline-item">
-              <i class="devicons devicons-react"></i>
-            </li>
-
-            <li class="list-inline-item">
-              <i class="devicons devicons-javascript"></i>
-            </li>
-
-            <li class="list-inline-item">
-              <i class="devicons devicons-nodejs"></i>
-            </li>
-
-            <li class="list-inline-item">
-              <i class="devicons devicons-ionic"></i>
-            </li>
-
-            <li class="list-inline-item">
-              <i class="devicons devicons-angular"></i>
-            </li>
-
-            <li class="list-inline-item">
-              <i class="devicons devicons-docker"></i>
-            </li>
-
-            <li class="list-inline-item">
-              <i class="devicons devicons-html5"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-css3"></i>
-            </li>
-
-            <li class="list-inline-item">
-              <i class="devicons devicons-python"></i>
-            </li>
-
-            <li class="list-inline-item">
-              <i class="devicons devicons-django"></i>
-            </li>
-
-            <li class="list-inline-item">
-              <i class="devicons devicons-git"></i>
-            </li>
-
-            <li class="list-inline-item">
-              <i class="devicons devicons-jquery"></i>
-            </li>
-
-            <li class="list-inline-item">
-              <i class="devicons devicons-sass"></i>
-            </li>
-
-            <li class="list-inline-item">
-              <i class="devicons devicons-bootstrap"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-wordpress"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-npm"></i>
-            </li>
-          </ul>
-
-          <div class="subheading mb-3">Workflow</div>
-          <ul class="fa-ul mb-0">
-            <li>
-              <i class="fa-li fa fa-check"></i> Mobile-First, Responsive Design
-            </li>
-            <li>
-              <i class="fa-li fa fa-check"></i> Cross Browser Testing &amp;
-              Debugging
-            </li>
-            <li><i class="fa-li fa fa-check"></i> Cross Functional Teams</li>
-            <li>
-              <i class="fa-li fa fa-check"></i> Agile Development &amp; Scrum
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section
-        class="resume-section p-3 p-lg-5 d-flex flex-column"
-        id="interests"
-      >
-        <div class="my-auto">
-          <h2 class="mb-5">Interests</h2>
-          <p>
-            Apart from being a software engineer, I am a passionate quizzer and
-            enjoy quizzing. I was among the top 5 corporate teams all over India
-            in Croma Tech Grandmasters Season 3 hosted by NDTV Good times..
-          </p>
-          <p class="mb-0">
-            I enjoy most of my time being outdoors. I enjoy hiking, long bike
-            trips and camping. I also spend some of my time playing basketball,
-            cricket, table tennis and paintball.
-          </p>
-        </div>
-      </section>
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
-        <div class="my-auto">
-          <h2 class="mb-5">Awards &amp; Certifications</h2>
-          <ul class="fa-ul mb-0">
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i> Mobile Sites -
-              Google Certification
-            </li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i> Microsoft
-              Certified Professional
-            </li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i> Microsoft
-              Certified Solutions Associate – Web Applications
-            </li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i> Microsoft
-              Certified Solutions Developer – Windows Store Apps Using HTML5.
-            </li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i> Microsoft
-              Specialist: Programming in HTML5 with JavaScript and CSS3
-              specialist.
-            </li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i> Microsoft
-              Specialist: Programming in C#.
-            </li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i> 1st Prize -
-              Mindtree Hackathon 2015
-            </li>
-          </ul>
-        </div>
-      </section>
     </div>
+  </section>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- ===== Path / timeline ================================================ -->
+  <!-- To add an entry: copy a .tl-item block. Add .current for the latest.  -->
+  <section class="section" id="path">
+    <div class="wrap">
+      <div class="row">
+        <div>
+          <header class="section-head reveal">
+            <div class="label"><span class="label-num">02</span> The path</div>
+            <h2 class="section-title">A timeline.</h2>
+          </header>
+        </div>
+        <div class="tl">
 
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+          <article class="tl-item current reveal">
+            <span class="tl-dot"></span>
+            <div class="tl-when">Aug 2023 — Present</div>
+            <div class="tl-role"><span class="co">Founding Engineer</span> <span class="at">at SigNoz</span></div>
+            <p class="tl-body">Open-source observability. Owning surfaces from idea to incident response — frontend, backend, ops, all of it.</p>
+            <div class="tag-list">
+              <span class="tag">OTel</span>
+              <span class="tag">ClickHouse</span>
+              <span class="tag">Go</span>
+              <span class="tag">React</span>
+            </div>
+          </article>
 
-    <!-- Custom scripts for this template -->
-    <script src="js/resume.min.js"></script>
-  </body>
+          <article class="tl-item reveal">
+            <span class="tl-dot"></span>
+            <div class="tl-when">Sep 2020 — Aug 2023</div>
+            <div class="tl-role"><span class="co">Engineering Manager</span> <span class="at">at Harness</span></div>
+            <p class="tl-body">Led a team of 16 in a fast-paced CD environment. Hired, coached, and built a culture that ships. Stayed close to the code as a player-coach.</p>
+            <div class="tag-list">
+              <span class="tag">Leadership</span>
+              <span class="tag">Hiring</span>
+              <span class="tag">Mentoring</span>
+            </div>
+          </article>
+
+          <article class="tl-item reveal">
+            <span class="tl-dot"></span>
+            <div class="tl-when">Feb 2019 — Sep 2020</div>
+            <div class="tl-role"><span class="co">Senior Frontend Engineer</span> <span class="at">at Postman</span></div>
+            <p class="tl-body">Documenter & dashboard. Custom components, internationalisation, perf, and a 99.9% quality bar.</p>
+            <div class="tag-list">
+              <span class="tag">React</span>
+              <span class="tag">Redux</span>
+              <span class="tag">Node</span>
+            </div>
+          </article>
+
+          <article class="tl-item reveal">
+            <span class="tl-dot"></span>
+            <div class="tl-when">Feb 2018 — Feb 2019</div>
+            <div class="tl-role"><span class="co">Software Engineer</span> <span class="at">at Morgan Stanley</span></div>
+            <p class="tl-body">PWM application in Angular 4. Workflow automation, reusable libraries, mentoring engineers.</p>
+            <div class="tag-list">
+              <span class="tag">Angular 4</span>
+              <span class="tag">Finance</span>
+            </div>
+          </article>
+
+          <article class="tl-item reveal">
+            <span class="tl-dot"></span>
+            <div class="tl-when">Jan 2017 — Feb 2018</div>
+            <div class="tl-role"><span class="co">Software Engineer</span> <span class="at">at Cready Technologies</span></div>
+            <p class="tl-body">Frontend in Angular 2/4. Lazy-loading, PWA, SSR via Angular Universal. Lighthouse and Core Web Vitals chasing.</p>
+            <div class="tag-list">
+              <span class="tag">Angular</span>
+              <span class="tag">PWA</span>
+              <span class="tag">SSR</span>
+              <span class="tag">SEO</span>
+            </div>
+          </article>
+
+          <article class="tl-item reveal">
+            <span class="tl-dot"></span>
+            <div class="tl-when">Feb 2014 — Jan 2017</div>
+            <div class="tl-role"><span class="co">Senior Systems Engineer</span> <span class="at">at Infosys</span></div>
+            <p class="tl-body">Responsive corporate apps for an insurance client — registration, quoting, payment and policy management. Lead on internal user-management and self-service modules.</p>
+            <div class="tag-list">
+              <span class="tag">AngularJS</span>
+              <span class="tag">Insurance</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Skills + awards ================================================ -->
+  <section class="section" id="skills">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <div class="label"><span class="label-num">03</span> Skills & tools</div>
+        <h2 class="section-title">What I reach for.</h2>
+        <p class="section-lede">Pragmatic and stack-flexible. Years are rough estimates — depth matters more than tenure.</p>
+      </header>
+
+      <div class="skill-grid">
+        <div class="skill-col">
+          <h4>Languages</h4>
+          <div class="skill-row"><span>TypeScript</span><span class="yrs">8 yrs</span></div>
+          <div class="skill-row"><span>JavaScript</span><span class="yrs">10 yrs</span></div>
+          <div class="skill-row"><span>Go</span><span class="yrs">2 yrs</span></div>
+          <div class="skill-row"><span>HTML/CSS</span><span class="yrs">10 yrs</span></div>
+          <div class="skill-row"><span>C#</span><span class="yrs">3 yrs</span></div>
+          <div class="skill-row"><span>SQL</span><span class="yrs">6 yrs</span></div>
+        </div>
+        <div class="skill-col">
+          <h4>Frameworks</h4>
+          <div class="skill-row"><span>React</span><span class="yrs">8 yrs</span></div>
+          <div class="skill-row"><span>Redux / Saga</span><span class="yrs">6 yrs</span></div>
+          <div class="skill-row"><span>Angular 1—4</span><span class="yrs">5 yrs</span></div>
+          <div class="skill-row"><span>Node / Sails</span><span class="yrs">5 yrs</span></div>
+          <div class="skill-row"><span>Next.js</span><span class="yrs">4 yrs</span></div>
+          <div class="skill-row"><span>Tailwind</span><span class="yrs">3 yrs</span></div>
+        </div>
+        <div class="skill-col">
+          <h4>Practice</h4>
+          <div class="skill-row"><span>Observability</span><span class="yrs">—</span></div>
+          <div class="skill-row"><span>Design Systems</span><span class="yrs">—</span></div>
+          <div class="skill-row"><span>Performance</span><span class="yrs">—</span></div>
+          <div class="skill-row"><span>Hiring & Mentoring</span><span class="yrs">—</span></div>
+          <div class="skill-row"><span>Cross-functional</span><span class="yrs">—</span></div>
+          <div class="skill-row"><span>Agile / Scrum</span><span class="yrs">—</span></div>
+        </div>
+      </div>
+
+      <h4 class="awards-title">Awards & Certifications</h4>
+      <div class="awards">
+        <div class="award"><span class="ix">01</span><span><span class="nm">1st Prize — Mindtree Hackathon 2015</span></span></div>
+        <div class="award"><span class="ix">02</span><span><span class="nm">Mobile Sites Certified</span><span class="by">— Google</span></span></div>
+        <div class="award"><span class="ix">03</span><span><span class="nm">MCP</span><span class="by">— Microsoft</span></span></div>
+        <div class="award"><span class="ix">04</span><span><span class="nm">MCSA — Web Applications</span><span class="by">— Microsoft</span></span></div>
+        <div class="award"><span class="ix">05</span><span><span class="nm">MCSD — Windows Store Apps (HTML5)</span><span class="by">— Microsoft</span></span></div>
+        <div class="award"><span class="ix">06</span><span><span class="nm">MS — Programming in HTML5 with JS & CSS3</span><span class="by">— Microsoft</span></span></div>
+        <div class="award"><span class="ix">07</span><span><span class="nm">MS — Programming in C#</span><span class="by">— Microsoft</span></span></div>
+        <div class="award"><span class="ix">08</span><span><span class="nm">Top 5 — Croma Tech Grandmasters S3</span><span class="by">— NDTV Good Times</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Beyond ========================================================= -->
+  <section class="section" id="beyond">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <div class="label"><span class="label-num">04</span> Off-keyboard</div>
+        <h2 class="section-title">The non-engineering parts.</h2>
+        <p class="section-lede">The things I do when I'm not staring at a terminal — most of them, somehow, also pattern-matching.</p>
+      </header>
+
+      <div class="personal">
+        <div class="card reveal">
+          <div class="corner"></div>
+          <div class="card-eyebrow">// quizzing</div>
+          <div class="card-title">Top 5 corporate teams in India.</div>
+          <p class="card-body">
+            Croma Tech Grandmasters Season 3, hosted by NDTV Good Times. Quizzing scratches the
+            same itch that engineering does — pattern-matching, lateral inference, and the small
+            dopamine hit when a fragment of trivia clicks into place.
+          </p>
+        </div>
+        <div class="card reveal">
+          <div class="corner"></div>
+          <div class="card-eyebrow">// outside</div>
+          <div class="card-title">Long rides, longer hikes.</div>
+          <p class="card-body">
+            Camping, hiking, motorcycle trips — anywhere a screen isn't the brightest thing in the
+            room. Also: basketball, cricket, table tennis, and the occasional paintball.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ======================================================== -->
+  <section class="section" id="contact" style="padding-bottom: 64px">
+    <div class="wrap">
+      <div class="contact reveal">
+        <div class="contact-l">
+          <div class="label" style="margin-bottom: 24px">
+            <span class="label-num">05</span> Get in touch
+          </div>
+          <h3>
+            Working on something <span class="serif" style="font-style: italic; color: var(--fg-2)">interesting</span>?<br />
+            Let's talk.
+          </h3>
+          <p class="contact-blurb">
+            Best for technical conversations, hiring, advising, or saying hi about quizzing.
+            Replies usually within a day.
+          </p>
+          <a class="contact-mail" href="mailto:myounis.ar1@gmail.com">
+            myounis.ar1@gmail.com <span class="arr">→</span>
+          </a>
+        </div>
+        <div class="contact-r">
+          <a class="contact-link" href="mailto:myounis.ar1@gmail.com">
+            <span class="key">Email</span>
+            <span class="val">myounis.ar1@gmail.com ↗</span>
+          </a>
+          <a class="contact-link" href="tel:+917899066282">
+            <span class="key">Phone</span>
+            <span class="val">+91 7899 066 282 ↗</span>
+          </a>
+          <a class="contact-link" href="https://github.com/younixm" target="_blank" rel="noreferrer">
+            <span class="key">GitHub</span>
+            <span class="val">@younixm ↗</span>
+          </a>
+          <a class="contact-link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+            <span class="key">LinkedIn</span>
+            <span class="val">/in/yunus-a-m ↗</span>
+          </a>
+          <a class="contact-link" href="#">
+            <span class="key">Location</span>
+            <span class="val">Bengaluru · IST ↗</span>
+          </a>
+          <a class="contact-link" href="#">
+            <span class="key">Resume</span>
+            <span class="val">Download .pdf ↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ========================================================= -->
+  <footer>
+    <div class="foot">
+      <div>© 2026 Yunus A M · Hand-built in Bengaluru</div>
+      <div>last_deploy: 2026.04.25 · uptime: ∞</div>
+    </div>
+  </footer>
+
+</body>
 </html>
