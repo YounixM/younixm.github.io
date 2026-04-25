@@ -28,6 +28,19 @@
         <a href="#path"><span class="num">02</span>Path</a>
         <a href="#skills"><span class="num">03</span>Skills</a>
         <a href="#beyond"><span class="num">04</span>Beyond</a>
+        <div class="controls-group">
+        <div class="accent-picker" data-open="false">
+          <button type="button" class="accent-trigger" id="accent-trigger" aria-haspopup="true" aria-expanded="false" aria-label="Accent color" title="Accent color">
+            <span class="accent-swatch"></span>
+          </button>
+          <div class="accent-menu" role="menu" aria-labelledby="accent-trigger">
+            <button type="button" data-accent="orange" aria-pressed="true" aria-label="Orange" title="Orange" style="color: oklch(0.78 0.16 55)"><span class="accent-swatch"></span></button>
+            <button type="button" data-accent="lime" aria-pressed="false" aria-label="Lime" title="Lime" style="color: oklch(0.85 0.18 130)"><span class="accent-swatch"></span></button>
+            <button type="button" data-accent="forest" aria-pressed="false" aria-label="Forest" title="Forest" style="color: oklch(0.55 0.13 150)"><span class="accent-swatch"></span></button>
+            <button type="button" data-accent="ocean" aria-pressed="false" aria-label="Ocean Blue" title="Ocean Blue" style="color: oklch(0.65 0.13 235)"><span class="accent-swatch"></span></button>
+            <button type="button" data-accent="purple" aria-pressed="false" aria-label="Purple" title="Purple" style="color: oklch(0.62 0.18 295)"><span class="accent-swatch"></span></button>
+          </div>
+        </div>
         <button type="button" class="theme-toggle" id="theme-toggle" role="switch" aria-checked="true" aria-label="Toggle dark mode">
           <span class="tt-track">
             <span class="tt-icon tt-sun" aria-hidden="true">
@@ -44,6 +57,7 @@
             <span class="tt-thumb"></span>
           </span>
         </button>
+        </div>
         <a href="#contact" class="cta">Get in touch ↗</a>
       </div>
     </div>
