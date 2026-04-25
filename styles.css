@@ -456,12 +456,39 @@ input[type="radio"] {
 }
 
 .hero-sub {
-  margin-top: 32px;
-  max-width: 56ch;
-  font-size: clamp(16px, 1.4vw, 19px);
-  color: var(--fg-2);
-  line-height: 1.55;
+  position: relative;
+  margin-top: 48px;
+  padding-left: 20px;
+  max-width: 96ch;
+  font-size: clamp(16px, 1.5vw, 26px);
+  color: color-mix(in oklch, var(--fg), var(--fg-2));
+  line-height: 1.6;
+  letter-spacing: -0.005em;
   text-wrap: pretty;
+  font-family: var(--serif);
+}
+
+.hero-sub::before {
+  content: "";
+  position: absolute;
+  top: 0.45em;
+  bottom: 0.45em;
+  left: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--accent) 0%,
+    var(--accent) 30%,
+    var(--line-soft) 100%
+  );
+  border-radius: 2px;
+}
+
+.hero-sub em {
+  font-size: 1.1em;
+  color: var(--fg);
+  font-weight: 400;
+  letter-spacing: -0.01em;
 }
 
 .hero-stats {
