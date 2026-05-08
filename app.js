@@ -8,6 +8,24 @@
     root.setAttribute("data-theme", stored);
   }
 
+  // Favicon: regenerated as a data URL so it tracks the site's theme + accent.
+  const iconLink = document.querySelector('link[rel="icon"]');
+  const appleIconLink = document.querySelector('link[rel="apple-touch-icon"]');
+  const updateFavicon = () => {
+    const isDark = root.getAttribute("data-theme") === "dark";
+    const bg = isDark ? "oklch(0.17 0.005 70)" : "oklch(0.985 0.005 80)";
+    const accent = getComputedStyle(root).getPropertyValue("--accent").trim()
+      || "oklch(0.78 0.16 55)";
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">`
+      + `<rect width="32" height="32" rx="7" fill="${bg}"/>`
+      + `<circle cx="16" cy="16" r="10" fill="${accent}" opacity="0.18"/>`
+      + `<circle cx="16" cy="16" r="5" fill="${accent}"/>`
+      + `</svg>`;
+    const url = `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
+    if (iconLink) iconLink.href = url;
+    if (appleIconLink) appleIconLink.href = url;
+  };
+
   const toggle = document.getElementById("theme-toggle");
   const syncToggle = () => {
     const isDark = root.getAttribute("data-theme") === "dark";
@@ -20,6 +38,7 @@
     root.setAttribute("data-theme", next);
     localStorage.setItem(THEME_KEY, next);
     syncToggle();
+    updateFavicon();
   });
 
   // Accent color picker: persist + apply --accent (--accent-soft is derived
@@ -43,6 +62,7 @@
     accentButtons.forEach((btn) => {
       btn.setAttribute("aria-pressed", String(btn.dataset.accent === name));
     });
+    updateFavicon();
   };
 
   const setAccentMenuOpen = (open) => {
@@ -52,6 +72,7 @@
 
   const storedAccent = localStorage.getItem(ACCENT_KEY);
   if (storedAccent && ACCENTS[storedAccent]) applyAccent(storedAccent);
+  updateFavicon();
 
   accentTrigger.addEventListener("click", (e) => {
     e.stopPropagation();
